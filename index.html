@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Spazio Alvitre</title>
+</head>
+<body>   
+    <header class="header">
+        <div class="logo">
+            <img src="assets/logo.webp" width="250" height="150" alt="logo">
+        </div>
+        <nav class="menu">
+            <ul class="menu-home">
+                <li><a href="#Projetos">Projetos</a></li>
+                <li><a href="#Sobre-mim">Sobre mim</a></li>
+                <li><a href="#Contatos">Contatos</a></li>
+            </ul>
+        </nav>
+        <div class="orcamento">
+            <a href="https://api.whatsapp.com/send?phone=19988302201&text=Olá, gostaria de solicitar um orçamento!" 
+            target="_blank">Faça seu orçamento
+            </a>
+            
+    </header>
+
+    <section class="mensagem">
+        <div class="frase">
+            <h1>Transformando seus sonhos em espaços únicos</h1>
+            <p>Onde cada detalhe conta uma história e reflete sua essência.</p>
+        </div>
+    </section>
+
+    <div class="projetos" id="projetos">
+        <h2 id="Projetos">Projetos</h2>
+
+        <div class="album">
+            <h3>Casa Moderna</h3>
+            <div class="projeto">
+                <img src="assets/projetos/casa1_1.jpg" alt="Casa 1 Imagem 1" class="imagem-casa" onclick="abrirLightbox(0, 0)">
+                <img src="assets/projetos/casa1_2.jpg" alt="Casa 1 Imagem 2" class="imagem-casa" onclick="abrirLightbox(0, 1)"> 
+                <img src="assets/projetos/casa1_3.jpg" alt="Casa 1 Imagem 3" class="imagem-casa" onclick="abrirLightbox(0, 2)"> 
+            </div>
+        </div>
+        
+        <div class="album">
+            <h3>Casa Contemporânea</h3>
+            <div class="projeto">
+                <img src="assets/projetos/casa2_1.jpg" alt="Casa 2 Imagem 1" class="imagem-casa" onclick="abrirLightbox(1, 0)">
+                <img src="assets/projetos/casa2_2.jpg" alt="Casa 2 Imagem 2" class="imagem-casa" onclick="abrirLightbox(1, 1)">
+                <img src="assets/projetos/casa2_3.jpg" alt="Casa 2 Imagem 3" class="imagem-casa" onclick="abrirLightbox(1, 2)">
+            </div>
+        </div>
+
+        <div class="album">
+            <h3>Casa Minimalista</h3>
+            <div class="projeto">
+                <img src="assets/projetos/casa3_1.jpg" alt="Casa 3 Imagem 1" class="imagem-casa" onclick="abrirLightbox(2, 0)">
+                <img src="assets/projetos/casa3_2.jpg" alt="Casa 3 Imagem 2" class="imagem-casa" onclick="abrirLightbox(2, 1)">
+            </div>
+        </div>
+    </div>
+
+    <div id="lightbox" class="lightbox" onclick="fecharLightbox()">
+        <img id="lightbox-imagem" src="" alt="Imagem ampliada">
+        <button class="navegar lightbox-prev" onclick="navegarImagens(-1, event)">&#10094;</button>
+        <button class="navegar lightbox-next" onclick="navegarImagens(1, event)">&#10095;</button>
+    </div>
+
+    <div class="sobreMim">
+        <h3 id="Sobre-mim">Sobre mim</h3>
+        <div class="conteudo-sobre">
+            <img src="assets/SobreMim.webp" alt="Foto de Larissa Dundis">
+            
+            <p> Sou [Nome do Arquiteto], formado em Arquitetura e Urbanismo, 
+                com [X anos] de experiência na criação de projetos residenciais, comerciais e corporativos. 
+                Minha paixão é transformar ideias em espaços funcionais e esteticamente impactantes, sempre priorizando sustentabilidade e inovação.
+                Ao longo da minha carreira, já desenvolvi projetos que alinham conforto, eficiência e design moderno, 
+                buscando atender às necessidades únicas de cada cliente. 
+                Cada projeto é uma nova oportunidade de contar uma história através da arquitetura, 
+                criando ambientes que refletem identidade e propósito.            
+                Seja para um pequeno espaço ou uma grande construção, estou pronto para transformar sonhos em realidade.</p>
+        </div>
+    </div>
+
+    <footer class="rodape">
+        
+        <div class="mensagem-orcamento">
+            <h3 id="Contatos">Entre em contato para realizarmos um orçamento:</h3>
+            <div class="contatos">
+                <a href="https://api.whatsapp.com/send?phone=19988302201&text=Olá, gostaria de solicitar um orçamento!" target="_blank">
+                    <img src="assets/whatsapp.png" alt="WhatsApp" width="50"> WhatsApp
+                </a>
+                <a href="mailto:ph.cordeirosilva555@gmail.com">
+                    <img src="assets/email.png" alt="E-mail" width="50"> E-mail
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
