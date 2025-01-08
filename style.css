@@ -8,7 +8,7 @@ body{
     width: 100%;
     height: 100%;
     font-family: 'Times New Roman', Times, serif;
-    background-color: #556B2F;
+    background-color: #BBAB9A;
     color: white;
     
 }
@@ -37,7 +37,7 @@ body{
     width: auto;
     height: auto;
     border-radius: 50%;
-    
+    object-fit: contain;
 }
 
 .menu{
@@ -63,7 +63,7 @@ body{
 }
 
 .menu ul li a:hover{
-    color: greenyellow;
+    color: #AE7862;
 }
 .mensagem {
     height: 100vh; 
@@ -104,11 +104,9 @@ body{
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-.orcamento{
-    
-    background-color: #645f5f;
+.orcamento{  
+    background-color: #AE7862;
     border-radius: 100px;
-    
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s, transform 0.2s;
 }
@@ -121,7 +119,7 @@ body{
 }
 
 .orcamento:hover{
-    background-color: #040505; 
+    background-color: #AE7862; 
     transform: scale(1.05); 
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
 }
@@ -153,13 +151,6 @@ body{
 
 .album{
     margin-bottom: 40px;
-}
-
-.album h3{
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 10px;
 }
 
 .projeto{
@@ -229,7 +220,7 @@ body{
     gap: 20px; 
     align-items: center; 
     padding: 30px; 
-    background-color: #d3c9bb;
+    background-color: #EBE6E0;
     border-radius: 15px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
@@ -268,11 +259,10 @@ body{
 .rodape {
     margin-top: 100px;
     padding: 20px 10px;
-    background-color: #f8f8f8;
+    background-color: #EBE6E0;
     text-align: center;
     font-size: 1rem;
     color: #555;
-    background-color: #d3c9bb;
 }
 
 .rodape hr {
