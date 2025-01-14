@@ -225,6 +225,8 @@ body{
 }
 
 .sobreMim {
+    display: flex;
+    flex-direction: column;
     margin-top: 10px; 
     gap: 20px; 
     align-items: center; 
@@ -316,17 +318,81 @@ body{
 @media (max-width: 1200px) {
     .galeria {
         grid-template-columns: repeat(4, 1fr); /* 4 colunas em telas médias */
+        gap: 15px; /* Espaçamento entre imagens */
+    }
+    .menu-home {
+        display: none !important; /* Força o ocultamento */
+    }
+    .sobre-mim {
+        padding: 10px;
+        font-size: 14px;
     }
 }
 
+/* Responsividade para telas menores */
 @media (max-width: 800px) {
+    body {
+        font-size: 14px;
+        margin: 10px;
+    }
+
     .galeria {
         grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas pequenas */
+        gap: 10px; /* Ajusta o espaçamento */
+    }
+
+    .galeria img {
+        width: auto;
+        height: auto;
+        max-width: 100%; /* Imagens se ajustam ao espaço */
+    }
+
+    .sobreMim {
+        display: flex;
+        flex-direction: column; /* Layout em coluna apenas para celulares */
+        align-items: center; /* Centralizar imagem e texto */
+    }
+
+    .conteudo-sobre img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .sobreMim h3 {
+        text-align: center;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .conteudo-sobre p {
+        text-align: center;
+        font-size: 14px;
     }
 }
 
+
 @media (max-width: 500px) {
+    body {
+        font-size: 12px;
+        margin: 5px;
+    }
+
     .galeria {
         grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+        gap: 10px;
     }
+
+    .galeria img {
+        width: auto;
+        height: auto;
+        max-width: 100%; /* Imagens se ajustam ao espaço */
+    }
+
+    .menu-home {
+        display: none; /* Esconde todo o menu em telas muito pequenas */
+    }
+    
 }
+
+
