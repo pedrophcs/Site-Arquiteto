@@ -1,55 +1,47 @@
-const albums = [
-    [  // Casa 1
-        "assets/projetos/casa1_1.jpg",
-        "assets/projetos/casa1_2.jpg",
-        "assets/projetos/casa1_3.jpg",
-    ],
-    [  // Casa 2
-        "assets/projetos/casa2_1.jpg",
-        "assets/projetos/casa2_2.jpg",
-        "assets/projetos/casa2_3.jpg",
-    ],
-    [  // Casa 3
-        "assets/projetos/casa3_1.jpg",
-        "assets/projetos/casa3_2.jpg",
-    ],
-];
+const images = document.querySelectorAll('.galeria img');
+const lightbox = document.querySelector('.lightbox');
+const lightboxImg = lightbox.querySelector('img');
+const prevBtn = document.querySelector('.lightbox-prev');
+const nextBtn = document.querySelector('.lightbox-next');
 
-let indiceAtual = 0;
-let indiceAlbumAtual = 0;
+let currentIndex = 0;
 
-function abrirLightbox(indiceAlbum, indiceImagem) {
-    indiceAlbumAtual = indiceAlbum;
-    indiceAtual = indiceImagem;
+// Abre a imagem ampliada
+images.forEach((img, index) => {
+    img.addEventListener('click', () => {
+        currentIndex = index;
+        showImage();
+        lightbox.style.display = 'flex';
+    });
+});
 
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImage = document.getElementById("lightbox-imagem");
-
-    
-    lightboxImage.src = albums[indiceAlbumAtual][indiceAtual];
-
-    
-    lightbox.style.display = "flex";
+// Exibe a imagem na lightbox
+function showImage() {
+    lightboxImg.src = images[currentIndex].src;
 }
 
-function fecharLightbox() {
-    const lightbox = document.getElementById("lightbox");
-    lightbox.style.display = "none";
-}
+// Navega para a imagem anterior
+prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage();
+});
 
+// Navega para a próxima imagem
+nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
+});
 
-function navegarImagens(direcao, event) {
-
-    event.stopPropagation();
-
-    indiceAtual += direcao;
-    
-    if (indiceAtual < 0) {
-        indiceAtual = albums[indiceAlbumAtual].length - 1; 
-    } else if (indiceAtual >= albums[indiceAlbumAtual].length) {
-        indiceAtual = 0; 
+// Fecha a lightbox ao clicar fora da imagem
+lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
     }
-  
-    const lightboxImage = document.getElementById("lightbox-imagem");
-    lightboxImage.src = albums[indiceAlbumAtual][indiceAtual];
-}
+});
+
+
+document.getElementById('logo').addEventListener('click', function (e) {
+     // Impede o comportamento padrão do link
+    location.reload(); // Recarrega a página
+});
+

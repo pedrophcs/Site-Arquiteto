@@ -31,6 +31,11 @@ body{
     margin-left: 10%;
 }
 
+.logo a {
+    display: inline-block;
+    text-decoration: none;
+}
+
 .logo img{
     max-width:250px;
     max-height:100px;
@@ -38,6 +43,12 @@ body{
     height: auto;
     border-radius: 50%;
     object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.logo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .menu{
@@ -67,7 +78,7 @@ body{
 }
 .mensagem {
     height: 100vh; 
-    background-image: url('assets/BG.webp'); 
+    background-image: url('assets/BG.png'); 
     background-size: cover;
     background-position: center;
     display: flex;
@@ -136,7 +147,7 @@ body{
 
 .projetos {
     padding: 150px 0px;
-    min-height: 400px; /* Altura mínima para manter o layout */
+    min-height: 400px; 
 }
 
 .projetos h2{
@@ -149,27 +160,25 @@ body{
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-.album{
-    margin-bottom: 40px;
+.galeria {
+    display: grid; 
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 10px; 
+    justify-content: center; 
+    padding: 20px; 
 }
 
-.projeto{
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-.projeto img {
-    width: 400px;
-    height: auto;
+.galeria img {
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.3s ease; 
     cursor: pointer;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
 }
 
-.projeto img:hover{
-    transform: scale(1.05);
+.galeria img:hover {
+    transform: scale(1.05); 
 }
 
 .lightbox {
@@ -294,10 +303,30 @@ body{
 }
 
 .contatos a:hover {
-    color: green;
+    color: #AE7862;
 }
 
 .contatos img {
     width: 24px;
     height: 24px;
+}
+
+
+/* Responsividade para telas menores */
+@media (max-width: 1200px) {
+    .galeria {
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas em telas médias */
+    }
+}
+
+@media (max-width: 800px) {
+    .galeria {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas pequenas */
+    }
+}
+
+@media (max-width: 500px) {
+    .galeria {
+        grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+    }
 }
