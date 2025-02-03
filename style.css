@@ -8,7 +8,7 @@ body{
     width: 100%;
     height: 100%;
     font-family: 'Times New Roman', Times, serif;
-    background-color: #BBAB9A;
+    background-color: #BBAB9A !important;
     color: white;
     overflow-x: hidden;
 
@@ -75,7 +75,7 @@ body{
 }
 
 .menu ul li a:hover{
-    color: #AE7862;
+    color: #AE7862 !important;
 }
 .mensagem {
     height: 100vh; 
@@ -133,7 +133,7 @@ body{
 }
 
 .orcamento:hover{
-    background-color: #AE7862; 
+    background-color: #AE7862 !important; 
     transform: scale(1.05); 
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
 }
@@ -234,7 +234,7 @@ body{
     justify-content: center;
     gap: 20px;
     padding: 30px;
-    background-color: #EBE6E0;
+    background-color: #EBE6E0 !important;
     border-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 900px;
@@ -269,7 +269,7 @@ body{
 .rodape {
     margin-top: 100px;
     padding: 20px 10px;
-    background-color: #EBE6E0;
+    background-color: #EBE6E0 !important;
     text-align: center;
     font-size: 1rem;
     color: #555;
