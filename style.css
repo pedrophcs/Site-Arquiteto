@@ -10,6 +10,7 @@ body{
     font-family: 'Times New Roman', Times, serif;
     background-color: #BBAB9A;
     color: white;
+    overflow-x: hidden;
 
 }
 
@@ -125,8 +126,10 @@ body{
 .orcamento a{
     text-decoration: none;
     color: white;
-    padding: 10px;
+    padding: 10px 20px;
     font-size: 20px;
+    display: inline-block;
+    white-space: nowrap;
 }
 
 .orcamento:hover{
@@ -224,48 +227,44 @@ body{
     color: lightgray;
 }
 
-.sobreMim {
+.sobreMim .conteudo-sobre {
     display: flex;
-    flex-direction: column;
-    margin-top: 10px; 
-    gap: 20px; 
-    align-items: center; 
-    padding: 30px; 
+    flex-direction: row;  
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
     background-color: #EBE6E0;
-    border-radius: 15px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-}
-
-.sobreMim h3 {
-    text-align: center;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 50px auto; 
+  }
+  
+  .sobreMim .perfil {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .sobreMim .texto-sobre {
+    flex: 1;
+  }
+  
+  .sobreMim h3 {
     font-size: 2rem;
     color: #333;
     margin-bottom: 20px;
-}
-
-.conteudo-sobre {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    gap: 20px;
-    
-}
-
-.conteudo-sobre img {
-    flex-shrink: 0; 
-    width: 200px;
-    height: 200px;
-    border-radius: 50%; 
-    object-fit: cover;
-}
-
-.conteudo-sobre p {
+  }
+  
+  .sobreMim p {
     max-width: 800px;
     font-size: 1rem;
     color: #555;
     line-height: 1.6;
     text-align: justify;
-}
+  }
 
 .rodape {
     margin-top: 100px;
@@ -314,14 +313,14 @@ body{
 }
 
 
-/* Responsividade para telas menores */
+
 @media (max-width: 1200px) {
     .galeria {
-        grid-template-columns: repeat(4, 1fr); /* 4 colunas em telas médias */
-        gap: 15px; /* Espaçamento entre imagens */
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 15px; 
     }
     .menu-home {
-        display: none !important; /* Força o ocultamento */
+        display: none !important; 
     }
     .sobre-mim {
         padding: 10px;
@@ -329,7 +328,6 @@ body{
     }
 }
 
-/* Responsividade para telas menores */
 @media (max-width: 800px) {
     body {
         font-size: 14px;
@@ -337,39 +335,63 @@ body{
     }
 
     .galeria {
-        grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas pequenas */
-        gap: 10px; /* Ajusta o espaçamento */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; 
     }
 
     .galeria img {
         width: auto;
         height: auto;
-        max-width: 100%; /* Imagens se ajustam ao espaço */
+        max-width: 100%; 
     }
 
-    .sobreMim {
-        display: flex;
-        flex-direction: column; /* Layout em coluna apenas para celulares */
-        align-items: center; /* Centralizar imagem e texto */
-    }
-
-    .conteudo-sobre img {
+    .sobreMim .conteudo-sobre {
+        flex-direction: column; 
+        text-align: center;
+      }
+      
+      .sobreMim .perfil {
         width: 100%;
-        max-width: 300px;
+        max-width: 300px; 
         height: auto;
-    }
-
-    .sobreMim h3 {
-        text-align: center;
-        font-size: 18px;
+        margin: 0 auto; 
+      }
+      
+      .sobreMim .texto-sobre {
+        margin-top: 20px;
+      }
+      
+      .sobreMim h3 {
+        font-size: 1.8rem;
         margin-bottom: 10px;
+      }
+      
+      .sobreMim p {
+        font-size: 0.9rem;
+        max-width: 90%;
+        margin: 0 auto;
+        text-align: justify;
+      }
+
+      .rodape {
+        padding: 15px 5px;
+        font-size: 0.9rem;
+    }
+    
+    .mensagem-orcamento h3 {
+        font-size: 1.3rem;
+    }
+    
+    .contatos {
+        gap: 20px;
+        flex-direction: column;
+    }
+    
+    .contatos a {
+        font-size: 1.1rem;
     }
 
-    .conteudo-sobre p {
-        text-align: center;
-        font-size: 14px;
     }
-}
 
 
 @media (max-width: 500px) {
@@ -377,22 +399,44 @@ body{
         font-size: 12px;
         margin: 5px;
     }
+    .header {
+        flex-wrap: wrap;           
+        justify-content: center;   
+        text-align: center;
+    }
+    .logo {
+        margin-left: 0;            
+        margin-bottom: 10px;        
+    }
+    
+    .menu {
+        width: 100%;               
+        margin-bottom: 10px;
+    }
+    
+    .orcamento {
+        margin-top: 10px;         
+    }
+    
+    .orcamento a {
+        padding: 10px 15px;        
+        font-size: 16px;            
+    }
 
     .galeria {
-        grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+        grid-template-columns: 1fr; 
         gap: 10px;
     }
 
     .galeria img {
         width: auto;
         height: auto;
-        max-width: 100%; /* Imagens se ajustam ao espaço */
+        max-width: 100%; 
     }
 
     .menu-home {
-        display: none; /* Esconde todo o menu em telas muito pequenas */
+        display: none; 
     }
-    
 }
 
 
